@@ -6,10 +6,10 @@ pipeline {
               steps {
                 withCredentials([usernamePassword(credentialsId: 'DockerHub',
                  passwordVariable: 'DockerHubPassword', usernameVariable: 'DockerHubUser')]) {
-                  sh "docker login -u ${env.DockerHubUser} -p ${env.DockerHubPassword}"
+                  sh "docker login -u ${env.DockerHubUser} -p ${env.DockerHubPassword}"}
             image 'maven:3.8.4-openjdk-11'
             args '-v /root/.m2:/root/.m2'
-                   }
+
               }
           }
         stage('Build') {
