@@ -2,7 +2,7 @@ pipeline {
  agent none
     stages {
          stage('Docker maven') {
-              agent any
+              agent docker
               steps {
                 withCredentials([usernamePassword(credentialsId: 'DockerHub',
                  passwordVariable: 'DockerHubPassword', usernameVariable: 'DockerHubUser')]) {
