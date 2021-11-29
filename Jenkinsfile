@@ -1,7 +1,9 @@
 pipeline {
     agent {
         docker{
-          sh "docker --version"
+            steps {
+          sh "docker --version"          }
+
         }
     }
     stages {
